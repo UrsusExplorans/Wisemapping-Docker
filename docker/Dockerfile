@@ -6,7 +6,7 @@ RUN apt-get install -y apt wget unzip mysql-client
 #RUN add-apt-repository ppa:webupd8team/java
 #RUN apt-get update
 #RUN echo "yes" | apt-get install -y oracle-java8-installer
-RUN apt-get install openjdk-8-jre-headless
+RUN apt-get install -y openjdk-8-jre-headless
 
 RUN wget https://bitbucket.org/wisemapping/wisemapping-open-source/downloads/wisemapping-v4.0.3.zip
 RUN unzip wisemapping-v4.0.3.zip -d /
