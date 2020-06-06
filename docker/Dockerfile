@@ -18,7 +18,7 @@ RUN chmod +x /wisemapping/init-sql.sh
 ADD docker/wisemapping.conf /wisemapping/webapps/wisemapping/WEB-INF/app.properties
 ADD docker/create-database.sql /wisemapping/config/database/mysql/create-database.sql
 
-RUN mkdir /etc/service/wisemapping
+RUN mkdir -p /etc/service/wisemapping
 ADD docker/services/wisemapping.sh /etc/service/wisemapping/run
 RUN chmod +x /etc/service/wisemapping/run
 
