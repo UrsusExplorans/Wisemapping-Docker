@@ -1,7 +1,7 @@
 FROM ubuntu:16.04
 
 RUN apt-get update
-RUN apt-get install -y apt wget unzip mysql-client
+RUN apt-get install -y apt wget unzip mysql-client software-properties-common
 
 RUN add-apt-repository ppa:webupd8team/java
 RUN apt-get update
