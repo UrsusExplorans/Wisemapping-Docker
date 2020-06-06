@@ -13,13 +13,13 @@ RUN unzip wisemapping-v4.0.3.zip -d /
 RUN mv wisemapping-v4.0.3/ /wisemapping/
 RUN rm /wisemapping-v4.0.3.zip
 
-ADD init-sql.sh /wisemapping/init-sql.sh
+ADD docker/init-sql.sh /wisemapping/init-sql.sh
 RUN chmod +x /wisemapping/init-sql.sh
-ADD wisemapping.conf /wisemapping/webapps/wisemapping/WEB-INF/app.properties
-ADD create-database.sql /wisemapping/config/database/mysql/create-database.sql
+ADD docker/wisemapping.conf /wisemapping/webapps/wisemapping/WEB-INF/app.properties
+ADD docker/create-database.sql /wisemapping/config/database/mysql/create-database.sql
 
 RUN mkdir /etc/service/wisemapping
-ADD services/wisemapping.sh /etc/service/wisemapping/run
+ADD docker/services/wisemapping.sh /etc/service/wisemapping/run
 RUN chmod +x /etc/service/wisemapping/run
 
 # Clean up APT when done.
